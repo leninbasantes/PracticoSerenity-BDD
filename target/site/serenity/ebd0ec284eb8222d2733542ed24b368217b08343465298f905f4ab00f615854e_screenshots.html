@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="aff02da45a4eab7c73b684bf2b173927f1a51484aaa834f7e52904f495afc2b6.html">Proceso De Compra En Swag Labs</a></span>
+                > <span class="truncate-60"><a
+                    href="ebd0ec284eb8222d2733542ed24b368217b08343465298f905f4ab00f615854e.html">Ingresar a comprar con usuario y contrase&ntilde;a </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 13-02-2024 19:13</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Proceso De Compra En Swag Labs </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="6fe0671aeea9e76b6998ee682216d11c7748a4152740df0586f3c256ecb3f5da.html">Chrome
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="f55cf301e8f51d63aebeb8bc8dbe880df940586e2a502c7a3e24c2b639523f8f.html">Windows
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="59736924e81ea98f655ac8eba7cd96079d8d80131e0c4360daf32a724d0b38a0.html">Chrome, Windows
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Ingresar a comprar con usuario y contrase&ntilde;a
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="bf1120d195cbcb65851d1d899974618202d8d638874b01eac2d4ff461537088d.png" title=" Given User estoy en la pagina" width="929"/>
+                <img src="bf1120d195cbcb65851d1d899974618202d8d638874b01eac2d4ff461537088d.png" title=" User open page" width="929"/>
+                <img src="bf1120d195cbcb65851d1d899974618202d8d638874b01eac2d4ff461537088d.png" title=" User opens the browser at https://www.saucedemo.com" width="929"/>
+                <img src="bf1120d195cbcb65851d1d899974618202d8d638874b01eac2d4ff461537088d.png" title=" User open page (completed)" width="929"/>
+                <img src="bf1120d195cbcb65851d1d899974618202d8d638874b01eac2d4ff461537088d.png" title=" Given User estoy en la pagina (completed)" width="929"/>
+                <img src="83e12cf221ca8fa2757cc33744800967069dfc347a4a86ae8c5b8801a8529551.png" title=" When ingreso datos &quot;standard_user&quot; &quot;secret_sauce&quot;" width="929"/>
+                <img src="83e12cf221ca8fa2757cc33744800967069dfc347a4a86ae8c5b8801a8529551.png" title=" User login task" width="929"/>
+                <img src="83e12cf221ca8fa2757cc33744800967069dfc347a4a86ae8c5b8801a8529551.png" title=" User enters 'standard_user' into Input User" width="929"/>
+                <img src="83e12cf221ca8fa2757cc33744800967069dfc347a4a86ae8c5b8801a8529551.png" title=" User enters 'secret_sauce' into Input Password" width="929"/>
+                <img src="d1fa00cc4f3b776128a633531240693469f1d1e57bec9c2789bb3637c1d79d2e.png" title=" User enters 'secret_sauce' into Input Password (completed)" width="929"/>
+                <img src="d1fa00cc4f3b776128a633531240693469f1d1e57bec9c2789bb3637c1d79d2e.png" title=" User clicks on Button Sumit" width="929"/>
+                <img src="ab93e43f628d6c9f2a9f1855266b4d2a5e65275bb7eb4793650231b03bc51683.png" title=" User clicks on Button Sumit (completed)" width="929"/>
+                <img src="ab93e43f628d6c9f2a9f1855266b4d2a5e65275bb7eb4793650231b03bc51683.png" title=" User login task (completed)" width="929"/>
+                <img src="ab93e43f628d6c9f2a9f1855266b4d2a5e65275bb7eb4793650231b03bc51683.png" title=" When ingreso datos &quot;standard_user&quot; &quot;secret_sauce&quot; (completed)" width="929"/>
+                <img src="ab93e43f628d6c9f2a9f1855266b4d2a5e65275bb7eb4793650231b03bc51683.png" title=" Then veo la pagina principal de productos" width="929"/>
+                <img src="ab93e43f628d6c9f2a9f1855266b4d2a5e65275bb7eb4793650231b03bc51683.png" title=" Then the title of the page should be a string containing 'Swag Labs'" width="929"/>
+                <img src="abde6261f5acdce8fe7667e045b54115e2ade493985b55e5306202281ed94028.png" title=" When agrego dos productos al carrito" width="929"/>
+                <img src="abde6261f5acdce8fe7667e045b54115e2ade493985b55e5306202281ed94028.png" title=" User add products to cart task" width="929"/>
+                <img src="abde6261f5acdce8fe7667e045b54115e2ade493985b55e5306202281ed94028.png" title=" User clicks on Button add to cart Product 1" width="929"/>
+                <img src="abde6261f5acdce8fe7667e045b54115e2ade493985b55e5306202281ed94028.png" title=" User clicks on Button add to cart Product 2" width="929"/>
+                <img src="fcfbecab1037ed381474b9bfa9543e96777ec5637127426260baf69362e9abaa.png" title=" User clicks on Button add to cart Product 2 (completed)" width="929"/>
+                <img src="fcfbecab1037ed381474b9bfa9543e96777ec5637127426260baf69362e9abaa.png" title=" User add products to cart task (completed)" width="929"/>
+                <img src="fcfbecab1037ed381474b9bfa9543e96777ec5637127426260baf69362e9abaa.png" title=" When agrego dos productos al carrito (completed)" width="929"/>
+                <img src="f724adbc1a94f2e331631e128e9c21c7a38f241b8fe56973fbe1e17da9c77703.png" title=" And hago click en el icono del carrito" width="929"/>
+                <img src="f724adbc1a94f2e331631e128e9c21c7a38f241b8fe56973fbe1e17da9c77703.png" title=" User view cart task" width="929"/>
+                <img src="f724adbc1a94f2e331631e128e9c21c7a38f241b8fe56973fbe1e17da9c77703.png" title=" User clicks on View Car" width="929"/>
+                <img src="f724adbc1a94f2e331631e128e9c21c7a38f241b8fe56973fbe1e17da9c77703.png" title=" User clicks on Checkout Steps" width="929"/>
+                <img src="5fb19b5030e566903aa69189b41d7ea657903b0283c64ae49491799ea4e6cd6c.png" title=" User clicks on Checkout Steps (completed)" width="929"/>
+                <img src="5fb19b5030e566903aa69189b41d7ea657903b0283c64ae49491799ea4e6cd6c.png" title=" User view cart task (completed)" width="929"/>
+                <img src="5fb19b5030e566903aa69189b41d7ea657903b0283c64ae49491799ea4e6cd6c.png" title=" And hago click en el icono del carrito (completed)" width="929"/>
+                <img src="87189b3d221528bd5d3542632508e0b65695a4ec05515ec352e173862906ac77.png" title=" And completo el formulario de compra con &quot;Lenin&quot;, &quot;Basantes&quot; y &quot;170101&quot;" width="929"/>
+                <img src="87189b3d221528bd5d3542632508e0b65695a4ec05515ec352e173862906ac77.png" title=" User complete purchase form task" width="929"/>
+                <img src="87189b3d221528bd5d3542632508e0b65695a4ec05515ec352e173862906ac77.png" title=" User enters 'Lenin' into Input User" width="929"/>
+                <img src="87189b3d221528bd5d3542632508e0b65695a4ec05515ec352e173862906ac77.png" title=" User enters 'Basantes' into Input Password" width="929"/>
+                <img src="155543e254a59b593c319beebd2222d9d0bd6df6a996538c297c363ab4394c5c.png" title=" User enters 'Basantes' into Input Password (completed)" width="929"/>
+                <img src="155543e254a59b593c319beebd2222d9d0bd6df6a996538c297c363ab4394c5c.png" title=" User enters '170101' into Button Sumit" width="929"/>
+                <img src="740fa68ea5c4c91703d61f5d140d3b612d9d6a05cee0134b92794b2485fcbc51.png" title=" User enters '170101' into Button Sumit (completed)" width="929"/>
+                <img src="740fa68ea5c4c91703d61f5d140d3b612d9d6a05cee0134b92794b2485fcbc51.png" title=" User clicks on Button Sumit" width="929"/>
+                <img src="810b2edb9482739d40bc6315101908b02948c1cde13e703c76087caad5d2ea34.png" title=" User clicks on Button Sumit (completed)" width="929"/>
+                <img src="810b2edb9482739d40bc6315101908b02948c1cde13e703c76087caad5d2ea34.png" title=" User complete purchase form task (completed)" width="929"/>
+                <img src="810b2edb9482739d40bc6315101908b02948c1cde13e703c76087caad5d2ea34.png" title=" And completo el formulario de compra con &quot;Lenin&quot;, &quot;Basantes&quot; y &quot;170101&quot; (completed)" width="929"/>
+                <img src="bcc26df73df53efab34af5e84fabffe7dad9bc760aab79638076836c9d881603.png" title=" And finalizo la compra" width="929"/>
+                <img src="bcc26df73df53efab34af5e84fabffe7dad9bc760aab79638076836c9d881603.png" title=" User finalize purchase task" width="929"/>
+                <img src="bcc26df73df53efab34af5e84fabffe7dad9bc760aab79638076836c9d881603.png" title=" User clicks on Button Sumit" width="929"/>
+                <img src="bcc26df73df53efab34af5e84fabffe7dad9bc760aab79638076836c9d881603.png" title=" User finalize purchase task (completed)" width="929"/>
+                <img src="bcc26df73df53efab34af5e84fabffe7dad9bc760aab79638076836c9d881603.png" title=" And finalizo la compra (completed)" width="929"/>
+                <img src="bcc26df73df53efab34af5e84fabffe7dad9bc760aab79638076836c9d881603.png" title=" Then deberia ver la confirmacion de la orden &quot;Thank you for your order!&quot;" width="929"/>
+                <img src="bcc26df73df53efab34af5e84fabffe7dad9bc760aab79638076836c9d881603.png" title=" Then text of Mensaje Confirmacion should be a string containing 'Thank you for your order!': <span class='success-color'>SUCCESS</span>" width="929"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.6.23</span>
+</div>
+</body>
+</html>

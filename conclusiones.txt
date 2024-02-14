@@ -1,0 +1,19 @@
+Hallazgos y Conclusiones de la Prueba E2E Automatizada
+
+
+Como parte del proceso de selección para la posición ofrecida, se me asignó la tarea de realizar una prueba funcional automatizada (Prueba E2E) de un flujo de compra en un sitio web específico. Este ejercicio se llevó a cabo en el IDE IntelliJ IDEA, empleando Gradle como herramienta de construcción y automatización, y utilizando el patrón de diseño Screenplay para estructurar las pruebas de manera eficiente y mantenible.
+
+Desarrollo del Ejercicio:
+La prueba E2E fue diseñada para automatizar el proceso de compra desde el inicio hasta el final, incluyendo la selección de productos, el llenado de información de pago, y la verificación de la confirmación de la compra. Para lograr esto, se implementaron distintas clases y métodos que representan las acciones dentro del flujo de compra, siguiendo los principios del patrón Screenplay.
+
+Inconvenientes y Soluciones:
+
+Compatibilidad con Chrome: Uno de los primeros desafíos enfrentados fue relacionado con la compatibilidad de la versión de Chrome. Originalmente, el ejercicio se basó que la versión de Chrome utilizada no generaría inconvenientes, como se mencionó en el workshop de referencia. Sin embargo, durante la ejecución de las pruebas, se identificaron errores específicos de compatibilidad, lo que me llevó a actualizar a la última versión de webdrivermanager. Esta actualización resolvió los problemas encontrados, permitiendo que las pruebas se ejecutaran sin errores.
+
+Uso de Archivos .feature: Otro aspecto importante fue el manejo de los archivos .feature. Se identificó que el uso de tildes en estos archivos provocaba errores en la ejecución de las pruebas. Para solucionar este inconveniente, se optó por evitar el uso de tildes en los archivos .feature, lo cual eliminó los errores relacionados y aseguró una ejecución fluida de las pruebas.
+
+Conclusiones:
+
+La realización de esta prueba E2E automatizada ha sido una oportunidad valiosa para demostrar la capacidad de aplicar conceptos avanzados de automatización de pruebas, así como la habilidad para resolver inconvenientes técnicos de manera efectiva. La experiencia reafirmó la importancia de mantener el software y las herramientas actualizadas para asegurar la compatibilidad, así como la necesidad de adoptar prácticas que faciliten la integración y ejecución de pruebas automatizadas.
+
+Este ejercicio también destacó el valor del patrón de diseño Screenplay en la estructuración de pruebas automatizadas, permitiendo un desarrollo más organizado, mantenible y escalable de las pruebas. La solución adoptada para los problemas encontrados demostró una capacidad para el diagnóstico y resolución de problemas, aspectos clave en el desarrollo de software de calidad.
