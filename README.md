@@ -25,15 +25,16 @@ Ejecuta el siguiente comando para ejecutar el codigo:
   1. **Añadir dependencias de Serenity-BDD:** Edita el archivo `build.gradle` de tu proyecto (o el archivo de configuración correspondiente si estás utilizando otro sistema de gestión de proyectos) para incluir las dependencias de Serenity-BDD.
 
    ```groovy
-    implementation 'net.serenity-bdd:serenity-core:3.6.23'
-    testImplementation 'net.serenity-bdd:serenity-junit:3.6.23'
-    testImplementation 'net.serenity-bdd:serenity-cucumber:3.6.23'
+    implementation group: 'net.serenity-bdd', name: 'serenity-core', version: '3.6.23'
+    testImplementation group: 'net.serenity-bdd', name: 'serenity-junit', version: '3.6.23'
+    testImplementation group: 'net.serenity-bdd', name: 'serenity-cucumber', version: '3.6.23'
     testImplementation 'io.cucumber:cucumber-java:7.3.3'
     testImplementation 'io.cucumber:cucumber-junit:7.3.3'
-    testImplementation 'io.github.bonigarcia:webdrivermanager:5.6.3'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.7.0'
     testImplementation 'junit:junit:4.13.2'
-    implementation 'net.serenity-bdd:serenity-screenplay:3.6.23'
-    implementation 'net.serenity-bdd:serenity-screenplay-webdriver:3.6.23'
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay', version: '3.6.23'
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-webdriver', version: '3.6.23'
+    implementation 'com.opencsv:opencsv:5.6'
     ```
 
   2. **Sincronizar dependencias:** Asegúrate de sincronizar las dependencias en IntelliJ para que el proyecto reconozca Serenity-BDD.
