@@ -58,3 +58,45 @@ Ejecuta el siguiente comando para ejecutar el codigo:
      - Haz clic derecho en el archivo y selecciona `Open in >`, luego elige Google Chrome para ver el informe.
 
 Siguiendo estos pasos, podrás configurar, ejecutar tus pruebas automatizadas con Karate, y visualizar los informes generados para analizar los resultados de tus pruebas.
+
+## 4. Ingreso de Datos mediante Archivo CSV
+
+Para facilitar el ingreso o actualización de los datos necesarios para el sistema, se utiliza un archivo en formato CSV (`data.csv`). A continuación, se detallan los pasos y el formato requerido para editar este archivo correctamente.
+
+### Ubicación del Archivo
+
+El archivo `data.csv` se encuentra ubicado en la siguiente ruta del proyecto src\test\resources
+
+
+Es importante asegurarse de que cualquier cambio se realice directamente en este archivo y en la ubicación especificada.
+
+### Cómo Editar el Archivo CSV
+
+Para agregar nuevos datos o modificar los existentes en el archivo `data.csv`, sigue estos pasos:
+
+1. Abre el archivo `data.csv` con un editor de texto plano (como Notepad) o con una aplicación de hojas de cálculo (como Microsoft Excel o Google Sheets). Si usas una aplicación de hojas de cálculo, asegúrate de guardar el archivo en formato CSV después de realizar los cambios.
+
+2. Cada línea del archivo representa un conjunto de datos específico. El formato debe seguir estrictamente el siguiente orden de columnas:
+   - **Usuario (user)**
+   - **Contraseña (password)**
+   - **Nombre (firstName)**
+   - **Apellido (lastName)**
+   - **Código Postal (ZIP)**
+
+   Por ejemplo, para ingresar un nuevo usuario, debes agregar una línea con los datos correspondientes, siguiendo el formato mencionado:
+
+- usuario_ejemplo,contraseña123,Juan,Pérez,00000
+
+3. Asegúrate de no dejar espacios adicionales entre los datos y de utilizar comas para separar cada valor. No se deben agregar comillas a menos que formen parte del dato en sí.
+
+4. Una vez que hayas terminado de editar o agregar la información deseada, guarda los cambios en el archivo. Si estás utilizando una aplicación de hojas de cálculo, recuerda exportar o guardar el archivo en el formato CSV.
+
+### Ejemplo de Datos en el Archivo CSV
+
+A continuación, se muestra un ejemplo de cómo se verían los datos dentro del archivo `data.csv`:
+
+- standard_user,secret_sauce,Lenin,Basantes,170101
+- usuario_ejemplo,contraseña123,Juan,Pérez,00000
+
+
+Al seguir estos pasos y recomendaciones, podrás asegurar que el archivo CSV esté correctamente formateado y listo para ser utilizado por el sistema.

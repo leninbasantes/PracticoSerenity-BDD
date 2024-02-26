@@ -1,5 +1,6 @@
 package org.nttdata.glue;
 
+import com.opencsv.exceptions.CsvValidationException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
@@ -11,8 +12,13 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.questions.page.TheWebPage;
+import org.nttdata.CSVDataLoader;
 import org.nttdata.tasks.*;
 import io.cucumber.java.Before;
+
+import java.io.IOException;
+import java.util.List;
+
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -36,11 +42,22 @@ public class PurchaseSteps {
         theActorCalled(ACTOR_NAME).attemptsTo(OpenPage.loadpage());
     }
 
-    @When("ingreso datos {string} {string}")
-    public void ingreso_datos(String user, String password) {
-        theActorInTheSpotlight().attemptsTo(LoginTask.withCredentials(user, password));
-    }
+    @When("ingreso datos")
+    public void ingreso_datos() {
+        String archivo = getClass().getClassLoader().getResource("data.csv").getPath();
+        try {
+            List<String[]> datos = CSVDataLoader.leerDatosCSV(archivo);
+            for (String[] fila : datos) {
+                String user = fila[0];
+                String password = fila[1];
+                theActorInTheSpotlight().attemptsTo(LoginTask.withCredentials(user, password));
+            }
+        } catch (IOException | CsvValidationException e) {
+            e.printStackTrace();
+        }
 
+
+    }
     @Then("veo la pagina principal de productos")
     public void veo_la_pagina_principal_de_productos() {
         theActorInTheSpotlight().should(seeThat(TheWebPage.title(), containsString("Swag Labs")));
@@ -54,9 +71,21 @@ public class PurchaseSteps {
         OnStage.theActorInTheSpotlight().attemptsTo(ViewCartTask.view());
     }
 
-    @When("completo el formulario de compra con {string}, {string} y {string}")
-    public void completo_el_formulario_de_compra_con(String firstName, String lastName, String postalCode) {
-        OnStage.theActorInTheSpotlight().attemptsTo(CompletePurchaseFormTask.withInformation(firstName, lastName, postalCode));
+    @When("completo el formulario de compra con")
+    public void completo_el_formulario_de_compra_con() {
+
+        String archivo = getClass().getClassLoader().getResource("data.csv").getPath();
+        try {
+            List<String[]> datos = CSVDataLoader.leerDatosCSV(archivo);
+            for (String[] fila : datos) {
+                String firstName = fila[2];
+                String lastName = fila[3];
+                String postalCode = fila[4];
+                OnStage.theActorInTheSpotlight().attemptsTo(CompletePurchaseFormTask.withInformation(firstName, lastName, postalCode));
+            }
+        } catch (IOException | CsvValidationException e) {
+            e.printStackTrace();
+        }
     }
 
     @And("finalizo la compra")
