@@ -16,7 +16,9 @@ import org.nttdata.CSVDataLoader;
 import org.nttdata.tasks.*;
 import io.cucumber.java.Before;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -44,9 +46,11 @@ public class PurchaseSteps {
 
     @When("ingreso datos")
     public void ingreso_datos() {
-        String archivo = getClass().getClassLoader().getResource("data.csv").getPath();
-        try {
-            List<String[]> datos = CSVDataLoader.leerDatosCSV(archivo);
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("data.csv")) {
+            if (inputStream == null) {
+                throw new FileNotFoundException("El archivo data.csv no se encontró en los recursos.");
+            }
+            List<String[]> datos = CSVDataLoader.leerDatosCSV(inputStream);
             for (String[] fila : datos) {
                 String user = fila[0];
                 String password = fila[1];
@@ -55,8 +59,6 @@ public class PurchaseSteps {
         } catch (IOException | CsvValidationException e) {
             e.printStackTrace();
         }
-
-
     }
     @Then("veo la pagina principal de productos")
     public void veo_la_pagina_principal_de_productos() {
@@ -73,10 +75,11 @@ public class PurchaseSteps {
 
     @When("completo el formulario de compra con")
     public void completo_el_formulario_de_compra_con() {
-
-        String archivo = getClass().getClassLoader().getResource("data.csv").getPath();
-        try {
-            List<String[]> datos = CSVDataLoader.leerDatosCSV(archivo);
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("data.csv")) {
+            if (inputStream == null) {
+                throw new FileNotFoundException("El archivo data.csv no se encontró en los recursos.");
+            }
+            List<String[]> datos = CSVDataLoader.leerDatosCSV(inputStream);
             for (String[] fila : datos) {
                 String firstName = fila[2];
                 String lastName = fila[3];
@@ -87,6 +90,7 @@ public class PurchaseSteps {
             e.printStackTrace();
         }
     }
+
 
     @And("finalizo la compra")
     public void finalizo_la_compra() {
